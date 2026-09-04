@@ -8,6 +8,7 @@
 <img width="412" height="282" alt="Captura de pantalla 2026-09-04 162355" src="https://github.com/user-attachments/assets/a210589c-f1f2-41e5-9c46-b515dce38790" />
 <img width="377" height="295" alt="Captura de pantalla 2026-09-04 162527" src="https://github.com/user-attachments/assets/b3c82d60-8bd1-4789-b746-28238f7f7481" />
 <img width="383" height="496" alt="Captura de pantalla 2026-09-04 162618" src="https://github.com/user-attachments/assets/3f80563d-84ee-40b3-b284-8dd5c65e4f3b" />
+
 <img width="408" height="559" alt="Captura de pantalla 2026-09-04 162704" src="https://github.com/user-attachments/assets/9232c7c0-2cbd-4418-a331-809b18a329f9" />
 
 
