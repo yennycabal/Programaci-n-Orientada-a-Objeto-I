@@ -14,11 +14,8 @@
  *      4) Merge Sort        (Ordenamiento por mezcla)
  *      5) Quick Sort        (Ordenamiento rapido)
  *      6) Counting Sort     (Ordenamiento por conteo)
- *
- *  El programa no usa clases: se trabaja con variables globales y funciones
- *  sueltas para mantener la logica lo mas simple y directa posible.
  * ============================================================================
- */
+*/
 
 #include <iostream>
 #include <vector>
