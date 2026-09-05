@@ -14,9 +14,8 @@
  *      4) Merge Sort        (Ordenamiento por mezcla)
  *      5) Quick Sort        (Ordenamiento rapido)
  *      6) Counting Sort     (Ordenamiento por conteo)
- 
+ *
  */
-
 #include <iostream>
 #include <vector>
 #include <cstdlib>
