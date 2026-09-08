@@ -1,0 +1,165 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+
+class Fraccion
+{
+    public:
+    // atributos
+        int numerador;
+        int denominador;
+
+    // metodo para simplificar
+    void simplificar()
+    {
+        int a = numerador;
+        int b = denominador;
+
+        while (b != 0)
+        {
+            int residuo = a % b;
+            a = b;
+            b = residuo;
+        }
+
+        numerador = numerador / a;
+        denominador = denominador / a;
+
+        if (denominador < 0)
+        {
+            numerador = numerador * -1;
+            denominador = denominador * -1;
+        }
+    }
+
+    // metodo para imprimir
+    void imprimir()
+    {
+        cout << "*************************************" << endl;
+        cout << "* " << numerador << "/" << denominador << endl;
+        cout << "*************************************" << endl;
+    }
+
+    // suma
+    Fraccion sumar(Fraccion a)
+    {
+        Fraccion resultado = Fraccion();
+
+        resultado.numerador = numerador * a.denominador +
+                              a.numerador * denominador;
+
+        resultado.denominador = denominador * a.denominador;
+
+        resultado.simplificar();
+
+        return resultado;
+    }
+
+    // resta
+    Fraccion restar(Fraccion a)
+    {
+        Fraccion resultado = Fraccion();
+
+        resultado.numerador = numerador * a.denominador -
+                              a.numerador * denominador;
+
+        resultado.denominador = denominador * a.denominador;
+
+        resultado.simplificar();
+
+        return resultado;
+    }
+
+    // multiplicacion
+    Fraccion multiplicar(Fraccion a)
+    {
+        Fraccion resultado = Fraccion();
+
+        resultado.numerador = numerador * a.numerador;
+        resultado.denominador = denominador * a.denominador;
+
+        resultado.simplificar();
+
+        return resultado;
+    }
+};
+
+
+int main()
+{
+    Fraccion fraccion_a = Fraccion();
+    Fraccion fraccion_b = Fraccion();
+    Fraccion resultado = Fraccion();
+
+    int opcion;
+
+    cout << "Ingrese el numerador de la primera fraccion: ";
+    cin >> fraccion_a.numerador;
+
+    cout << "Ingrese el denominador de la primera fraccion: ";
+    cin >> fraccion_a.denominador;
+
+    cout << "Ingrese el numerador de la segunda fraccion: ";
+    cin >> fraccion_b.numerador;
+
+    cout << "Ingrese el denominador de la segunda fraccion: ";
+    cin >> fraccion_b.denominador;
+
+    cout << endl;
+    cout << "========== MENU ==========" << endl;
+    cout << "1. Suma" << endl;
+    cout << "2. Resta" << endl;
+    cout << "3. Multiplicacion" << endl;
+    cout << "4. Simplificar primera fraccion" << endl;
+    cout << "5. Simplificar segunda fraccion" << endl;
+    cout << "Elija una opcion: ";
+    cin >> opcion;
+
+    switch(opcion)
+    {
+        case 1:
+            resultado = fraccion_a.sumar(fraccion_b);
+
+            cout << endl;
+            cout << "RESULTADO DE LA SUMA:" << endl;
+            resultado.imprimir();
+            break;
+
+        case 2:
+            resultado = fraccion_a.restar(fraccion_b);
+
+            cout << endl;
+            cout << "RESULTADO DE LA RESTA:" << endl;
+            resultado.imprimir();
+            break;
+
+        case 3:
+            resultado = fraccion_a.multiplicar(fraccion_b);
+
+            cout << endl;
+            cout << "RESULTADO DE LA MULTIPLICACION:" << endl;
+            resultado.imprimir();
+            break;
+
+        case 4:
+            fraccion_a.simplificar();
+
+            cout << endl;
+            cout << "PRIMERA FRACCION SIMPLIFICADA:" << endl;
+            fraccion_a.imprimir();
+            break;
+
+        case 5:
+            fraccion_b.simplificar();
+
+            cout << endl;
+            cout << "SEGUNDA FRACCION SIMPLIFICADA:" << endl;
+            fraccion_b.imprimir();
+            break;
+
+        default:
+            cout << "Opcion no valida." << endl;
+    }
+
+    return 0;
+}
